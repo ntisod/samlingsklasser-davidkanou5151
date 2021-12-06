@@ -57,7 +57,34 @@ namespace Samlingsklasser
 
         static void Övning2Medelvärde()
         {
+               //Skapar en lista som heter "övning2Medelvärde" och som har värdet double
+            List<double> övning2Medelvärde = new List<double>(); 
 
+            //Skapar en for metod som gör att programmet ska upprepas
+            for (int i = 0; i < 1000000000; i++)
+            {
+                //Frågar användaren om värdet på talet som hen ska mata in
+                Console.Write("Mata in ett tal:");
+                
+                //Omvandlar svaret från användaren och från string till double
+                double tal = double.Parse(Console.ReadLine());
+                
+                //använder if eftersom det ska finnas ett villkor om användaren trycker in talet 0
+                if (tal == 0)
+                {
+                    //Denna rad gör att programmet stängs ner när man matar in 0
+                    Environment.Exit(1);
+                }
+                //Ifall man sätter in andra värden än 0 då skall programmet innanför else satsen köras som den ska
+                else 
+                {
+                    //Denna rad gör att talet som blev inmatad av användaren ska lägga till i listan
+                    övning2Medelvärde.Add(tal);
+                    
+                    //Denna rad skriver ut svaret av själva programmet. Programmet skall skriva ut medelvärdet av talen i listan. 
+                    Console.WriteLine("Medelvärde:" + övning2Medelvärde.Average());
+                }
+            }
         }
 
         static void DictionaryExempel()
